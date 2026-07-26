@@ -1,0 +1,83 @@
+name: DEA method or feature proposal
+description: Propose a model, diagnostic, data workflow, or compatibility target.
+title: "[Model]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        FrontierGuard treats each DEA formulation as a mathematical contract.
+        Proposals are strongest when they identify conventions and an independent
+        validation oracle.
+
+  - type: input
+    id: name
+    attributes:
+      label: Method or feature name
+      placeholder: Network SBM with undesirable outputs
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Research problem
+      description: Who needs this and what analysis is currently difficult or unsafe?
+    validations:
+      required: true
+
+  - type: textarea
+    id: formulation
+    attributes:
+      label: Mathematical formulation and conventions
+      description: >
+        Define the objective, constraints, orientation, returns-to-scale
+        assumptions, disposability, zero handling, and exceptional cases.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary references
+      description: >
+        Cite papers, books, standards, or official documentation. Include DOI or
+        stable URLs when possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: >
+        Identify hand-calculated cases, published results, metamorphic properties,
+        and an independent implementation suitable for cross-validation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: ecosystem
+    attributes:
+      label: Existing implementations
+      description: >
+        List packages that implement the method, their licenses, and any
+        conventions FrontierGuard would need to distinguish.
+
+  - type: textarea
+    id: api
+    attributes:
+      label: Proposed user experience
+      description: Show a small API example if you have one.
+      render: python
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I checked the feature matrix and roadmap.
+          required: true
+        - label: I searched existing issues for this proposal.
+          required: true
+        - label: I have read and agree to follow the Code of Conduct.
+          required: true

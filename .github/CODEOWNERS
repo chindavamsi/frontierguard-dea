@@ -1,0 +1,5 @@
+# Default owner and protected automation.
+* @chindavamsi
+/.github/ @chindavamsi
+/pyproject.toml @chindavamsi
+/uv.lock @chindavamsi

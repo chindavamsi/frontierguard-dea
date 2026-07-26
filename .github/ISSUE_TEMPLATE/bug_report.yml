@@ -1,0 +1,99 @@
+name: Bug or incorrect result
+description: Report a reproducible failure, numerical issue, or unexpected DEA result.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve FrontierGuard DEA. For a security issue,
+        stop here and use the private reporting link in `SECURITY.md`.
+
+  - type: input
+    id: version
+    attributes:
+      label: FrontierGuard DEA version
+      description: Run `python -c "import frontierguard; print(frontierguard.__version__)"`.
+      placeholder: 0.1.0a0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problem category
+      options:
+        - Incorrect efficiency score, peer, slack, or target
+        - Solver failure or numerical instability
+        - Input validation
+        - Serialization or reporting
+        - Installation or packaging
+        - Performance
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: model
+    attributes:
+      label: Model specification
+      description: >
+        Include the method, orientation, returns to scale, slack strategy,
+        solver, tolerances, and every non-default option.
+      placeholder: |
+        Method: radial envelopment
+        Orientation: input
+        Returns to scale: VRS
+        Slack strategy: normalized
+        Solver: scipy-highs
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproducible example
+      description: >
+        Provide executable code and the smallest non-confidential dataset that
+        reproduces the behavior. Replace sensitive names and values.
+      render: python
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result and evidence
+      description: >
+        State the expected result. For a mathematical discrepancy, include a
+        hand calculation, paper citation, or output from another named DEA tool.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include the complete traceback, solver status, or result object.
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, operating system, architecture, and install method.
+      placeholder: Python 3.12.8; macOS 15 arm64; uv/PyPI
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched existing issues for this behavior.
+          required: true
+        - label: The example contains no confidential or personally identifying data.
+          required: true
+        - label: I have read and agree to follow the Code of Conduct.
+          required: true

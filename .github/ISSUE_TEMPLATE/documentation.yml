@@ -1,0 +1,34 @@
+name: Documentation improvement
+description: Report missing, confusing, or incorrect documentation.
+title: "[Docs]: "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Documentation location
+      description: Link to the page, file, section, docstring, or example.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is unclear or incorrect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested improvement
+      description: Explain what the reader should learn or be able to do.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched existing issues for this documentation problem.
+          required: true
+        - label: I have read and agree to follow the Code of Conduct.
+          required: true

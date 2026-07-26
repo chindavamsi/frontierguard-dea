@@ -1,0 +1,39 @@
+name: Usage or research question
+description: Ask about supported behavior, interpretation, or model selection.
+title: "[Question]: "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Analysis goal
+      description: Describe the decision or research question you are trying to answer.
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What have you tried?
+      description: >
+        Include relevant code, model choices, documentation consulted, and
+        non-confidential data characteristics.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: FrontierGuard DEA version
+      placeholder: 0.1.0a0
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched the documentation and existing issues.
+          required: true
+        - label: I have not included confidential or personally identifying data.
+          required: true
+        - label: I have read and agree to follow the Code of Conduct.
+          required: true
