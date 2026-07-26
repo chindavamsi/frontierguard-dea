@@ -11,7 +11,7 @@ between releases; each such change must still be recorded here.
 
 No user-facing changes yet.
 
-## [0.1.0a1] - 2026-07-26
+## [0.1.0a1] - 2026-07-27
 
 ### Added
 

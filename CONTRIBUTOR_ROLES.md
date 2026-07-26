@@ -2,7 +2,7 @@
 
 This file records accountable human contributions using the CRediT
 (Contributor Roles Taxonomy). It describes release `0.1.0a1`, dated
-2026-07-26. Role assignments should be updated as the contributor community
+2026-07-27. Role assignments should be updated as the contributor community
 grows.
 
 ## Vamsi Chinda

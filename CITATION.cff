@@ -9,7 +9,7 @@ repository-code: "https://github.com/chindavamsi/frontierguard-dea"
 url: "https://github.com/chindavamsi/frontierguard-dea"
 license: MIT
 version: 0.1.0a1
-date-released: "2026-07-26"
+date-released: "2026-07-27"
 keywords:
   - data envelopment analysis
   - DEA

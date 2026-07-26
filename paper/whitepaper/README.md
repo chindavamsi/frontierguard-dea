@@ -1,7 +1,7 @@
 ---
 title: "FrontierGuard DEA: Toward Auditable and Reproducible Efficiency, Productivity, and Network Analysis"
 author: "Vamsi Chinda"
-date: "2026-07-26"
+date: "2026-07-27"
 report-version: "0.1"
 software-version: "0.1.0a1"
 status: "Non-peer-reviewed alpha-preview technical report"
@@ -15,7 +15,7 @@ bibliography: "references.bib"
 **Vamsi Chinda**
 **Technical report version:** 0.1
 **Software version described:** FrontierGuard DEA 0.1.0a1
-**Date:** 26 July 2026
+**Date:** 27 July 2026
 **Status:** Non-peer-reviewed alpha-preview technical report
 
 > **Status statement.** This document is a technical report, not a
