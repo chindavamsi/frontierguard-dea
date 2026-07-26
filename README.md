@@ -7,7 +7,8 @@ FrontierGuard DEA is a new open-source package being built to unify the
 fragmented DEA workflow behind one typed, inspectable API. Multi-stage and
 network DEA are architectural primitives, not afterthoughts.
 
-The project is pre-alpha. The implemented foundation currently includes:
+The project is an alpha research preview. The implemented foundation currently
+includes:
 
 - radial input- and output-oriented envelopment models;
 - CRS, VRS, NIRS, and NDRS technologies;
@@ -40,17 +41,21 @@ reporting, and cross-language validation.
 
 ## Installation
 
-For the pre-alpha source release:
+After version `0.1.0a1` is published to PyPI, install it with:
 
 ```bash
-python -m pip install \
-  "frontierguard-dea @ git+https://github.com/chindavamsi/frontierguard-dea.git"
+python -m pip install --pre "frontierguard-dea==0.1.0a1"
 ```
 
-Contributors can clone the repository and run `uv sync --all-groups`. The
-optional native HiGHS adapter is available through the `highs` extra. A PyPI
-release will follow the repository launch after trusted publishing and release
-protection are configured.
+The optional native HiGHS adapter is available through the `highs` extra:
+
+```bash
+python -m pip install --pre "frontierguard-dea[highs]==0.1.0a1"
+```
+
+Contributors can clone the repository and run `uv sync --all-groups`.
+Until the PyPI publication is confirmed, install the reviewed source branch or
+tag directly from GitHub rather than assuming the index entry exists.
 
 ## Quick start
 
@@ -130,3 +135,11 @@ private process in [SECURITY.md](SECURITY.md).
 Research users can cite the project using [CITATION.cff](CITATION.cff). Release
 history and compatibility-impacting changes are recorded in
 [CHANGELOG.md](CHANGELOG.md).
+
+The publication programme includes a versioned
+[technical white paper](paper/whitepaper/README.md)
+([PDF](output/pdf/frontierguard-dea-white-paper-v0.1.pdf)), an explicit
+[AI-use record](AI_USAGE.md), and an executable
+[cross-language conformance benchmark](benchmarks/README.md). These materials
+describe current evidence and limitations; they do not imply peer review or
+complete cross-language validation.

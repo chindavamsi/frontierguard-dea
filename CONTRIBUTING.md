@@ -3,8 +3,8 @@
 Thank you for helping build a trustworthy open-source DEA toolkit. Contributions
 are welcome from researchers, practitioners, educators, and software engineers.
 
-FrontierGuard is pre-alpha. Correctness and transparent model conventions take
-priority over expanding the feature count.
+FrontierGuard is an alpha research preview. Correctness and transparent model
+conventions take priority over expanding the feature count.
 
 ## Before you start
 

@@ -41,7 +41,7 @@ method oracle.
 
 ## Coverage targets
 
-These are improvement targets. The enforced pre-alpha release gate is 90%
+These are improvement targets. The enforced alpha-preview release gate is 90%
 overall branch coverage; not every model module has reached the 95% target yet.
 
 - at least 95% branch coverage for model construction, validation, and solver
@@ -64,9 +64,12 @@ instead of being relabeled as valid.
 ## Release ladder
 
 - **Pre-alpha:** core code and local oracles.
-- **Alpha:** cross-language golden suite and full docs for each advertised
-  method.
-- **Beta:** real user studies, performance benchmarks, stable evidence schema,
-  and external methodology review.
+- **Alpha:** an installable research preview with explicit method contracts,
+  local analytical or published fixtures, and a public record of incomplete
+  independent-validation gates. Individual methods remain provisional until
+  their declared oracle requirements are met.
+- **Beta:** completed cross-language gates for the advertised stable method
+  surface, real-user studies, performance benchmarks, a stable evidence
+  schema, and external methodology review.
 - **1.0:** every checked feature in the public matrix meets its oracle gate and
   the API has a published compatibility policy.

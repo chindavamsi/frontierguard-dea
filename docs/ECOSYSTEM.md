@@ -8,9 +8,12 @@ solver, audit, and result contract. “Parity” means the same mathematical
 capability has been implemented and independently validated, not that code,
 fixtures, or undocumented conventions have been copied.
 
-No maintained package currently combines broad deterministic DEA,
-network/dynamic models, productivity and economic models, statistical
-inference, modern solver diagnostics, and one stable result schema.
+This dated documentation audit did not identify one maintained package that
+documents broad deterministic DEA, network/dynamic models, productivity and
+economic models, statistical inference, modern solver diagnostics, and a
+common result contract together. Package capabilities evolve, so this
+observation is a research hypothesis and interoperability target, not a claim
+of superiority or completeness.
 
 ## Capability landscape
 

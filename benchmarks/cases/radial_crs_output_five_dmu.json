@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1.0",
+  "protocol_version": "0.1.0",
+  "case_id": "radial-crs-output-five-dmu",
+  "title": "Five-DMU rational CRS output radial case",
+  "status": "active",
+  "model": {
+    "family": "radial_envelopment",
+    "orientation": "output",
+    "returns_to_scale": "crs",
+    "slacks": "none",
+    "exclude_self": false,
+    "reference_scope": "in_sample",
+    "disposability": "strong_inputs_and_outputs",
+    "score_convention": "output_reciprocal_phi"
+  },
+  "data": {
+    "dmu_names": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "input_names": [
+      "x1",
+      "x2"
+    ],
+    "output_names": [
+      "y1"
+    ],
+    "inputs": [
+      [
+        2.0,
+        5.0
+      ],
+      [
+        2.0,
+        4.0
+      ],
+      [
+        6.0,
+        6.0
+      ],
+      [
+        3.0,
+        2.0
+      ],
+      [
+        6.0,
+        2.0
+      ]
+    ],
+    "outputs": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        3.0
+      ],
+      [
+        1.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  },
+  "oracle": {
+    "provenance": {
+      "authority": "analytical",
+      "description": "Exact reciprocal output-expansion values for the repository's five-DMU rational fixture; external package reproduction remains pending.",
+      "repository_paths": [
+        "src/frontierguard/datasets.py::load_five_dmu",
+        "tests/test_radial.py::test_cross_language_five_dmu_radial_oracle"
+      ],
+      "citation_keys": [
+        "charnes-cooper-rhodes-1978"
+      ],
+      "independent_external_reproduction": false
+    },
+    "derivation": [
+      "The output radial factors are the reciprocals of the normalized technical-efficiency scores for this declared convention.",
+      "The exact expansion factors are 2, 1, 6/5, 7/5, and 1.",
+      "The input/output equality relation is specific to this CRS fixture and is checked separately in the manifest."
+    ],
+    "expected": {
+      "dmu_names": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "radial_factor": [
+        2.0,
+        1.0,
+        1.2,
+        1.4,
+        1.0
+      ],
+      "technical_efficiency": [
+        0.5,
+        1.0,
+        0.8333333333333334,
+        0.7142857142857143,
+        1.0
+      ],
+      "statuses": [
+        "optimal",
+        "optimal",
+        "optimal",
+        "optimal",
+        "optimal"
+      ]
+    }
+  },
+  "tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-08,
+    "audit": 1e-07
+  },
+  "metamorphic_tests": [
+    {
+      "id": "positive-unit-scaling",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "scale_columns",
+        "input_factors": [
+          100.0,
+          0.01
+        ],
+        "output_factors": [
+          1000.0
+        ]
+      }
+    },
+    {
+      "id": "dmu-permutation",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "permute_dmus",
+        "order": [
+          3,
+          1,
+          4,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "id": "variable-permutation",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "permute_variables",
+        "input_order": [
+          1,
+          0
+        ],
+        "output_order": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "duplicate-efficient-reference",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "duplicate_reference",
+        "source_index": 1,
+        "new_name": "B_duplicate"
+      }
+    }
+  ],
+  "license": {
+    "benchmark_code": "MIT",
+    "case_data": "MIT",
+    "redistribution_note": "Fixture already distributed with FrontierGuard; exact original external provenance must be established before third-party attribution is claimed."
+  },
+  "notes": [
+    "Adapters that report phi as efficiency must normalize technical_efficiency to 1/phi and record the reciprocal operation.",
+    "Independent cross-language execution remains pending."
+  ]
+}

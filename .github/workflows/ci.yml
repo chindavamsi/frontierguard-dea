@@ -49,6 +49,25 @@ jobs:
       - name: Type check
         run: uv run --frozen mypy
 
+      - name: Validate scholarly release metadata
+        run: |
+          uv run --frozen python scripts/validate_release_metadata.py
+          uvx --from cffconvert==2.0.0 cffconvert --validate
+
+      - name: Validate conformance benchmark
+        run: |
+          benchmark_results="$(mktemp -d)"
+          uv run --frozen python benchmarks/scripts/validate_assets.py
+          uv run --frozen python benchmarks/scripts/run_frontierguard.py \
+            --output-dir "$benchmark_results"
+          uv run --frozen python benchmarks/scripts/validate_results.py \
+            --results-dir "$benchmark_results"
+
+      - name: Render the technical white paper
+        run: >-
+          uv run --frozen python scripts/render_whitepaper_pdf.py
+          --output "${{ runner.temp }}/frontierguard-dea-white-paper-v0.1.pdf"
+
   test:
     name: Test on Python ${{ matrix.python-version }}
     runs-on: ubuntu-latest

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frontierguard.org/schemas/benchmark-manifest-0.1.0.json",
+  "title": "FrontierGuard DEA benchmark manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "suite_id",
+    "title",
+    "case_files",
+    "cross_case_relations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "protocol_version": {
+      "const": "0.1.0"
+    },
+    "suite_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_files": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_./-]+\\.json$"
+      }
+    },
+    "cross_case_relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "relation",
+          "left_case",
+          "right_case",
+          "left_field",
+          "right_field"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "relation": {
+            "enum": [
+              "name_aligned_equal",
+              "name_aligned_reciprocal"
+            ]
+          },
+          "left_case": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "right_case": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "left_field": {
+            "enum": [
+              "radial_factor",
+              "technical_efficiency"
+            ]
+          },
+          "right_field": {
+            "enum": [
+              "radial_factor",
+              "technical_efficiency"
+            ]
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

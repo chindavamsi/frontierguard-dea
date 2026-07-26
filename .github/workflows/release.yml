@@ -81,6 +81,16 @@ jobs:
           uv run --frozen ruff format --check .
           uv run --frozen ruff check .
           uv run --frozen mypy
+          uv run --frozen python scripts/validate_release_metadata.py
+          uvx --from cffconvert==2.0.0 cffconvert --validate
+          benchmark_results="$(mktemp -d)"
+          uv run --frozen python benchmarks/scripts/validate_assets.py
+          uv run --frozen python benchmarks/scripts/run_frontierguard.py \
+            --output-dir "$benchmark_results"
+          uv run --frozen python benchmarks/scripts/validate_results.py \
+            --results-dir "$benchmark_results"
+          uv run --frozen python scripts/render_whitepaper_pdf.py \
+            --output "${{ runner.temp }}/frontierguard-dea-white-paper-v0.1.pdf"
           uv run --frozen pytest --cov=frontierguard --cov-report=term-missing
 
       - name: Build wheel and source distribution
@@ -124,14 +134,14 @@ jobs:
         with:
           subject-path: dist/*
 
+      - name: Attach distributions to the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" dist/* --clobber
+
       - name: Publish to PyPI with trusted publishing
         uses: pypa/gh-action-pypi-publish@ba38be9e461d3875417946c167d0b5f3d385a247  # v1.14.1
         with:
           packages-dir: dist/
           print-hash: true
           verbose: true
-
-      - name: Attach distributions to the GitHub release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh release upload "$GITHUB_REF_NAME" dist/*

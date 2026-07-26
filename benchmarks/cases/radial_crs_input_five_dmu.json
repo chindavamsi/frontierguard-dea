@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1.0",
+  "protocol_version": "0.1.0",
+  "case_id": "radial-crs-input-five-dmu",
+  "title": "Five-DMU rational CRS input radial case",
+  "status": "active",
+  "model": {
+    "family": "radial_envelopment",
+    "orientation": "input",
+    "returns_to_scale": "crs",
+    "slacks": "none",
+    "exclude_self": false,
+    "reference_scope": "in_sample",
+    "disposability": "strong_inputs_and_outputs",
+    "score_convention": "input_theta"
+  },
+  "data": {
+    "dmu_names": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "input_names": [
+      "x1",
+      "x2"
+    ],
+    "output_names": [
+      "y1"
+    ],
+    "inputs": [
+      [
+        2.0,
+        5.0
+      ],
+      [
+        2.0,
+        4.0
+      ],
+      [
+        6.0,
+        6.0
+      ],
+      [
+        3.0,
+        2.0
+      ],
+      [
+        6.0,
+        2.0
+      ]
+    ],
+    "outputs": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        3.0
+      ],
+      [
+        1.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  },
+  "oracle": {
+    "provenance": {
+      "authority": "analytical",
+      "description": "Exact rational scores already used by FrontierGuard's radial and multiplier regression tests; the primary external source has not yet been verified.",
+      "repository_paths": [
+        "src/frontierguard/datasets.py::load_five_dmu",
+        "tests/test_radial.py::test_cross_language_five_dmu_radial_oracle",
+        "tests/test_multiplier.py::test_multiplier_matches_cross_language_five_dmu_fixture"
+      ],
+      "citation_keys": [
+        "charnes-cooper-rhodes-1978"
+      ],
+      "independent_external_reproduction": false
+    },
+    "derivation": [
+      "Scores are exact rational optima of the declared CRS envelopment programs.",
+      "The expected values are 1/2, 1, 5/6, 5/7, and 1 in DMU-name order.",
+      "An independent package run is required before this fixture can be described as cross-language evidence."
+    ],
+    "expected": {
+      "dmu_names": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "radial_factor": [
+        0.5,
+        1.0,
+        0.8333333333333334,
+        0.7142857142857143,
+        1.0
+      ],
+      "technical_efficiency": [
+        0.5,
+        1.0,
+        0.8333333333333334,
+        0.7142857142857143,
+        1.0
+      ],
+      "statuses": [
+        "optimal",
+        "optimal",
+        "optimal",
+        "optimal",
+        "optimal"
+      ]
+    }
+  },
+  "tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-08,
+    "audit": 1e-07
+  },
+  "metamorphic_tests": [
+    {
+      "id": "positive-unit-scaling",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "scale_columns",
+        "input_factors": [
+          100.0,
+          0.01
+        ],
+        "output_factors": [
+          1000.0
+        ]
+      }
+    },
+    {
+      "id": "dmu-permutation",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "permute_dmus",
+        "order": [
+          3,
+          1,
+          4,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "id": "variable-permutation",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "permute_variables",
+        "input_order": [
+          1,
+          0
+        ],
+        "output_order": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "duplicate-efficient-reference",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "duplicate_reference",
+        "source_index": 1,
+        "new_name": "B_duplicate"
+      }
+    }
+  ],
+  "license": {
+    "benchmark_code": "MIT",
+    "case_data": "MIT",
+    "redistribution_note": "Fixture already distributed with FrontierGuard; exact original external provenance must be established before third-party attribution is claimed."
+  },
+  "notes": [
+    "The word cross-language in legacy test names is an intended validation target, not completed evidence.",
+    "Peer intensities are excluded because alternate optima can be solver-dependent."
+  ]
+}

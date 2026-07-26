@@ -4,12 +4,13 @@ FrontierGuard DEA values both software security and analytical integrity.
 
 ## Supported versions
 
-The project is pre-alpha and has not made a stable release. Security fixes are
-applied to the latest code on `main` and will be included in the next release.
-Older pre-alpha snapshots are not supported.
+The project is an alpha research preview and has not made a stable 1.0 release.
+Security fixes are applied to the latest supported alpha and to `main`. Older
+alpha snapshots are not supported.
 
 | Version | Supported |
 | --- | --- |
+| Latest `0.1.x` alpha | Yes |
 | `main` | Yes |
 | Unreleased local snapshots | No |
 

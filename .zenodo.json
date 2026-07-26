@@ -1,0 +1,25 @@
+{
+  "upload_type": "software",
+  "publication_date": "2026-07-26",
+  "title": "FrontierGuard DEA",
+  "creators": [
+    {
+      "name": "Chinda, Vamsi"
+    }
+  ],
+  "description": "FrontierGuard DEA release 0.1.0a1 is an open-source, typed, and auditable Python toolkit for efficiency measurement, productivity analysis, and multi-stage data envelopment analysis. This alpha research preview is intended for research evaluation and reproducible method development.",
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "data envelopment analysis",
+    "DEA",
+    "efficiency measurement",
+    "productivity analysis",
+    "operations research",
+    "network DEA",
+    "multi-stage DEA",
+    "optimization",
+    "reproducible research",
+    "research software"
+  ]
+}
