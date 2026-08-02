@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.27"]
+requires = ["hatchling>=1.31.0"]
 build-backend = "hatchling.build"
 
 [project]
@@ -59,12 +59,12 @@ report = ["jinja2>=3.1"]
 [dependency-groups]
 dev = [
   "highspy>=1.11,<2",
-  "hypothesis>=6.125",
+  "hypothesis>=6.164.0",
   "mypy>=1.14",
   "pandas-stubs>=2.2",
   "pytest>=8.3",
   "pytest-cov>=6.0",
-  "ruff>=0.9",
+  "ruff>=0.16.1",
 ]
 
 [tool.hatch.build.targets.wheel]
