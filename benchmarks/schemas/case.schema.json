@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frontierguard.org/schemas/benchmark-case-0.1.0.json",
+  "title": "FrontierGuard DEA benchmark case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "case_id",
+    "title",
+    "status",
+    "model",
+    "data",
+    "oracle",
+    "tolerances",
+    "metamorphic_tests",
+    "license"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "protocol_version": {
+      "const": "0.1.0"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "active",
+        "candidate",
+        "retired"
+      ]
+    },
+    "model": {
+      "$ref": "#/$defs/model"
+    },
+    "data": {
+      "$ref": "#/$defs/data"
+    },
+    "oracle": {
+      "$ref": "#/$defs/oracle"
+    },
+    "tolerances": {
+      "$ref": "#/$defs/tolerances"
+    },
+    "metamorphic_tests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metamorphicTest"
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark_code",
+        "case_data",
+        "redistribution_note"
+      ],
+      "properties": {
+        "benchmark_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "case_data": {
+          "type": "string",
+          "minLength": 1
+        },
+        "redistribution_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "finiteNonnegative": {
+      "type": "number",
+      "minimum": 0
+    },
+    "finitePositive": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "numericRow": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/finiteNonnegative"
+      }
+    },
+    "numericMatrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/numericRow"
+      }
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "orientation",
+        "returns_to_scale",
+        "slacks",
+        "exclude_self",
+        "reference_scope",
+        "disposability",
+        "score_convention"
+      ],
+      "properties": {
+        "family": {
+          "const": "radial_envelopment"
+        },
+        "orientation": {
+          "enum": [
+            "input",
+            "output"
+          ]
+        },
+        "returns_to_scale": {
+          "enum": [
+            "crs",
+            "vrs",
+            "nirs",
+            "ndrs"
+          ]
+        },
+        "slacks": {
+          "enum": [
+            "none",
+            "normalized",
+            "max_sum"
+          ]
+        },
+        "exclude_self": {
+          "type": "boolean"
+        },
+        "reference_scope": {
+          "const": "in_sample"
+        },
+        "disposability": {
+          "const": "strong_inputs_and_outputs"
+        },
+        "score_convention": {
+          "enum": [
+            "input_theta",
+            "output_reciprocal_phi"
+          ]
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dmu_names",
+        "input_names",
+        "output_names",
+        "inputs",
+        "outputs"
+      ],
+      "properties": {
+        "dmu_names": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "input_names": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "output_names": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "inputs": {
+          "$ref": "#/$defs/numericMatrix"
+        },
+        "outputs": {
+          "$ref": "#/$defs/numericMatrix"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority",
+        "description",
+        "repository_paths",
+        "citation_keys",
+        "independent_external_reproduction"
+      ],
+      "properties": {
+        "authority": {
+          "enum": [
+            "analytical",
+            "primary_publication",
+            "independent_formulation",
+            "external_implementation"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "citation_keys": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "independent_external_reproduction": {
+          "type": "boolean"
+        }
+      }
+    },
+    "oracle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provenance",
+        "derivation",
+        "expected"
+      ],
+      "properties": {
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "derivation": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expected": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "dmu_names",
+            "radial_factor",
+            "technical_efficiency",
+            "statuses"
+          ],
+          "properties": {
+            "dmu_names": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "radial_factor": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/finiteNonnegative"
+              }
+            },
+            "technical_efficiency": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/finiteNonnegative"
+              }
+            },
+            "statuses": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "enum": [
+                  "optimal",
+                  "iteration_limit",
+                  "time_limit",
+                  "solution_limit",
+                  "infeasible",
+                  "unbounded",
+                  "error"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "tolerances": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "absolute",
+        "relative",
+        "audit"
+      ],
+      "properties": {
+        "absolute": {
+          "$ref": "#/$defs/finitePositive"
+        },
+        "relative": {
+          "$ref": "#/$defs/finitePositive"
+        },
+        "audit": {
+          "$ref": "#/$defs/finitePositive"
+        }
+      }
+    },
+    "metamorphicTest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "relation",
+        "transform"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "relation": {
+          "const": "name_aligned_primary_scores_equal"
+        },
+        "transform": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "input_factors",
+                "output_factors"
+              ],
+              "properties": {
+                "kind": {
+                  "const": "scale_columns"
+                },
+                "input_factors": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/$defs/finitePositive"
+                  }
+                },
+                "output_factors": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/$defs/finitePositive"
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "order"
+              ],
+              "properties": {
+                "kind": {
+                  "const": "permute_dmus"
+                },
+                "order": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "input_order",
+                "output_order"
+              ],
+              "properties": {
+                "kind": {
+                  "const": "permute_variables"
+                },
+                "input_order": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "output_order": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "source_index",
+                "new_name"
+              ],
+              "properties": {
+                "kind": {
+                  "const": "duplicate_reference"
+                },
+                "source_index": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "new_name": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

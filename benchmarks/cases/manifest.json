@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1.0",
+  "protocol_version": "0.1.0",
+  "suite_id": "frontierguard-radial-conformance-seed",
+  "title": "FrontierGuard radial DEA conformance seed suite",
+  "case_files": [
+    "radial_crs_input_analytical_3dmu.json",
+    "radial_crs_input_five_dmu.json",
+    "radial_crs_output_five_dmu.json",
+    "radial_vrs_input_five_dmu.json"
+  ],
+  "cross_case_relations": [
+    {
+      "id": "five-dmu-crs-normalized-efficiency-orientation-equality",
+      "relation": "name_aligned_equal",
+      "left_case": "radial-crs-input-five-dmu",
+      "right_case": "radial-crs-output-five-dmu",
+      "left_field": "technical_efficiency",
+      "right_field": "technical_efficiency"
+    },
+    {
+      "id": "five-dmu-crs-radial-factor-reciprocity",
+      "relation": "name_aligned_reciprocal",
+      "left_case": "radial-crs-input-five-dmu",
+      "right_case": "radial-crs-output-five-dmu",
+      "left_field": "radial_factor",
+      "right_field": "radial_factor"
+    }
+  ],
+  "notes": [
+    "Only active cases are executed by default.",
+    "The suite is an initial local conformance seed; independent package results have not yet been generated."
+  ]
+}

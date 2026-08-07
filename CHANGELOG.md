@@ -4,10 +4,14 @@ All notable changes to FrontierGuard DEA will be documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-Because the project is pre-alpha, public APIs may change between releases; each
-such change must still be recorded here.
+Because the project is an alpha research preview, public APIs may change
+between releases; each such change must still be recorded here.
 
 ## [Unreleased]
+
+No user-facing changes yet.
+
+## [0.1.0a1] - 2026-08-07
 
 ### Added
 
@@ -33,5 +37,11 @@ such change must still be recorded here.
 - Mathematical contracts, ecosystem matrix, validation policy, and roadmap.
 - Community governance, security, contribution, citation, and release
   automation.
+- Versioned scholarly metadata, contributor roles, and a transparent AI-use
+  record.
+- FrontierGuard DEA White Paper v0.1 as a non-peer-reviewed technical report.
+- An executable conformance-benchmark protocol with machine-readable cases,
+  result contracts, and adapter specifications for independent implementations.
 
-[Unreleased]: https://github.com/chindavamsi/frontierguard-dea/commits/main
+[Unreleased]: https://github.com/chindavamsi/frontierguard-dea/compare/v0.1.0a1...HEAD
+[0.1.0a1]: https://github.com/chindavamsi/frontierguard-dea/releases/tag/v0.1.0a1

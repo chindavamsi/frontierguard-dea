@@ -24,7 +24,7 @@ body:
     id: version
     attributes:
       label: FrontierGuard DEA version
-      placeholder: 0.1.0a0
+      placeholder: 0.1.0a1
 
   - type: checkboxes
     id: checks

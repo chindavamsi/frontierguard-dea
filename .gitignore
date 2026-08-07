@@ -12,5 +12,6 @@ coverage.xml
 dist/
 htmlcov/
 site/
+tmp/
 *.egg-info/
 *.py[cod]

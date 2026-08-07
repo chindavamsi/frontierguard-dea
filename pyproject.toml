@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "frontierguard-dea"
-version = "0.1.0a0"
+version = "0.1.0a1"
 description = "A rigorous, extensible Data Envelopment Analysis toolkit"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -25,7 +25,7 @@ keywords = [
   "productivity",
 ]
 classifiers = [
-  "Development Status :: 2 - Pre-Alpha",
+  "Development Status :: 3 - Alpha",
   "Intended Audience :: Science/Research",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
@@ -60,10 +60,13 @@ report = ["jinja2>=3.1"]
 dev = [
   "highspy>=1.11,<2",
   "hypothesis>=6.125",
+  "jsonschema>=4.23,<5",
   "mypy>=1.14",
   "pandas-stubs>=2.2",
   "pytest>=8.3",
   "pytest-cov>=6.0",
+  "reportlab>=4.4,<5",
+  "rfc3339-validator>=0.1.4,<1",
   "ruff>=0.9",
 ]
 
@@ -75,7 +78,7 @@ exclude = ["/.hypothesis", "/.hypothesis/**"]
 
 [tool.pytest.ini_options]
 addopts = "--strict-config --strict-markers -ra"
-testpaths = ["tests"]
+testpaths = ["tests", "benchmarks/tests"]
 
 [tool.coverage.run]
 branch = true

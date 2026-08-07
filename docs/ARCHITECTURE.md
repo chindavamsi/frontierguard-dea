@@ -1,6 +1,6 @@
 # Architecture
 
-Status: pre-alpha foundation
+Status: alpha research preview
 
 ## Design goals
 

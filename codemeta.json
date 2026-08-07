@@ -1,0 +1,51 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "type": "SoftwareSourceCode",
+  "name": "FrontierGuard DEA",
+  "alternateName": "frontierguard-dea",
+  "description": "An open-source, typed, and auditable Python toolkit for efficiency measurement, productivity analysis, and multi-stage data envelopment analysis.",
+  "codeRepository": "https://github.com/chindavamsi/frontierguard-dea",
+  "issueTracker": "https://github.com/chindavamsi/frontierguard-dea/issues",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.1.0a1",
+  "datePublished": "2026-08-07",
+  "developmentStatus": "alpha",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python >=3.10",
+  "applicationCategory": "Data Envelopment Analysis",
+  "keywords": [
+    "data envelopment analysis",
+    "DEA",
+    "efficiency measurement",
+    "productivity analysis",
+    "operations research",
+    "network DEA",
+    "multi-stage DEA",
+    "optimization",
+    "reproducible research",
+    "research software"
+  ],
+  "author": {
+    "type": "Person",
+    "id": "https://github.com/chindavamsi",
+    "givenName": "Vamsi",
+    "familyName": "Chinda",
+    "name": "Vamsi Chinda",
+    "affiliation": {
+      "type": "Organization",
+      "name": "Independent Researcher, India"
+    }
+  },
+  "maintainer": {
+    "type": "Person",
+    "id": "https://github.com/chindavamsi",
+    "givenName": "Vamsi",
+    "familyName": "Chinda",
+    "name": "Vamsi Chinda",
+    "affiliation": {
+      "type": "Organization",
+      "name": "Independent Researcher, India"
+    }
+  },
+  "releaseNotes": "https://github.com/chindavamsi/frontierguard-dea/blob/main/CHANGELOG.md"
+}

@@ -5,16 +5,26 @@ type: software
 authors:
   - family-names: Chinda
     given-names: Vamsi
+    affiliation: "Independent Researcher, India"
 repository-code: "https://github.com/chindavamsi/frontierguard-dea"
 url: "https://github.com/chindavamsi/frontierguard-dea"
 license: MIT
-version: 0.1.0a0
+version: 0.1.0a1
+date-released: "2026-08-07"
 keywords:
   - data envelopment analysis
+  - DEA
   - efficiency
-  - productivity
+  - efficiency measurement
+  - productivity analysis
   - operations research
   - network DEA
+  - multi-stage DEA
+  - optimization
+  - reproducible research
+  - research software
 abstract: >-
-  FrontierGuard DEA is a typed and auditable Python toolkit for efficiency,
-  productivity, and multi-stage data envelopment analysis.
+  FrontierGuard DEA is an open-source, typed, and auditable Python toolkit for
+  efficiency measurement, productivity analysis, and multi-stage data
+  envelopment analysis. This alpha research preview is intended for research
+  evaluation and reproducible method development.

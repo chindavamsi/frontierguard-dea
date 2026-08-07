@@ -1,8 +1,8 @@
 # Governance
 
-FrontierGuard DEA uses a maintainer-led governance model during its pre-alpha
-stage. The goal is to make decisions transparently while preserving a coherent,
-auditable mathematical core.
+FrontierGuard DEA uses a maintainer-led governance model during its alpha
+research-preview stage. The goal is to make decisions transparently while
+preserving a coherent, auditable mathematical core.
 
 ## Roles
 

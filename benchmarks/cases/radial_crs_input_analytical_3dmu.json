@@ -1,0 +1,143 @@
+{
+  "schema_version": "0.1.0",
+  "protocol_version": "0.1.0",
+  "case_id": "radial-crs-input-analytical-3dmu",
+  "title": "Hand-calculated three-DMU CRS input radial case",
+  "status": "active",
+  "model": {
+    "family": "radial_envelopment",
+    "orientation": "input",
+    "returns_to_scale": "crs",
+    "slacks": "none",
+    "exclude_self": false,
+    "reference_scope": "in_sample",
+    "disposability": "strong_inputs_and_outputs",
+    "score_convention": "input_theta"
+  },
+  "data": {
+    "dmu_names": [
+      "A",
+      "B",
+      "C"
+    ],
+    "input_names": [
+      "staff"
+    ],
+    "output_names": [
+      "cases"
+    ],
+    "inputs": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        3.0
+      ]
+    ],
+    "outputs": [
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        2.0
+      ]
+    ]
+  },
+  "oracle": {
+    "provenance": {
+      "authority": "analytical",
+      "description": "One-input/one-output CRS scores follow directly from each DMU's output-input ratio relative to A's frontier ray.",
+      "repository_paths": [
+        "tests/test_radial.py::test_crs_input_scores_match_hand_calculation",
+        "tests/test_multiplier.py::analytical_data"
+      ],
+      "citation_keys": [
+        "charnes-cooper-rhodes-1978"
+      ],
+      "independent_external_reproduction": false
+    },
+    "derivation": [
+      "A has output/input ratio 1 and defines the best CRS ray, so theta_A = 1.",
+      "B produces one output with two inputs; A produces the same output with one input, so theta_B = 1/2.",
+      "C produces two outputs with three inputs; two copies of A require two inputs, so theta_C = 2/3."
+    ],
+    "expected": {
+      "dmu_names": [
+        "A",
+        "B",
+        "C"
+      ],
+      "radial_factor": [
+        1.0,
+        0.5,
+        0.6666666666666666
+      ],
+      "technical_efficiency": [
+        1.0,
+        0.5,
+        0.6666666666666666
+      ],
+      "statuses": [
+        "optimal",
+        "optimal",
+        "optimal"
+      ]
+    }
+  },
+  "tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-08,
+    "audit": 1e-07
+  },
+  "metamorphic_tests": [
+    {
+      "id": "positive-unit-scaling",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "scale_columns",
+        "input_factors": [
+          1000.0
+        ],
+        "output_factors": [
+          0.01
+        ]
+      }
+    },
+    {
+      "id": "dmu-permutation",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "permute_dmus",
+        "order": [
+          2,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "duplicate-efficient-reference",
+      "relation": "name_aligned_primary_scores_equal",
+      "transform": {
+        "kind": "duplicate_reference",
+        "source_index": 0,
+        "new_name": "A_duplicate"
+      }
+    }
+  ],
+  "license": {
+    "benchmark_code": "MIT",
+    "case_data": "MIT",
+    "redistribution_note": "Small hand-derived analytical fixture authored for FrontierGuard and redistributed under the repository license."
+  },
+  "notes": [
+    "This case validates primary radial scores, not uniqueness of lambda weights.",
+    "Independent execution in another DEA package remains pending."
+  ]
+}

@@ -391,8 +391,8 @@ methods and are not aliases of this estimator.
 - Data must be non-negative and finite.
 - Missing data are never imputed.
 - The radial models are convex envelopment models.
-- Relational network models are CRS. The stable foundation is serial; the
-  arbitrary acyclic-graph engine is experimental.
+- Relational network models are CRS. The serial implementation is provisional;
+  the arbitrary acyclic-graph engine is experimental.
 - Canonical non-negative multipliers are the default. If a selected stage has
   zero virtual input, that stage score is reported as undefined while the
   overall score remains valid.
