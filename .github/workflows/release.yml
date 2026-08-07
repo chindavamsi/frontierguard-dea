@@ -4,16 +4,23 @@ on:
   release:
     types:
       - published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag to rebuild and publish
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 concurrency:
-  group: release-${{ github.event.release.tag_name }}
+  group: release-${{ inputs.tag || github.event.release.tag_name }}
   cancel-in-progress: false
 
 env:
   UV_VERSION: "0.11.16"
+  RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
 
 jobs:
   build:
@@ -26,6 +33,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           persist-credentials: false
+          ref: ${{ env.RELEASE_TAG }}
 
       - name: Install uv and Python
         uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9  # v9.0.0
@@ -48,7 +56,7 @@ jobs:
           metadata = tomllib.loads(pathlib.Path("pyproject.toml").read_text())
           version = metadata["project"]["version"]
           expected_tag = f"v{version}"
-          actual_tag = os.environ["GITHUB_REF_NAME"]
+          actual_tag = os.environ["RELEASE_TAG"]
 
           version_text = pathlib.Path("src/frontierguard/_version.py").read_text()
           init_match = re.search(
@@ -137,7 +145,9 @@ jobs:
       - name: Attach distributions to the GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "$GITHUB_REF_NAME" dist/* --clobber
+        run: >-
+          gh release upload "$RELEASE_TAG" dist/* --clobber
+          --repo "$GITHUB_REPOSITORY"
 
       - name: Publish to PyPI with trusted publishing
         uses: pypa/gh-action-pypi-publish@ba38be9e461d3875417946c167d0b5f3d385a247  # v1.14.1
