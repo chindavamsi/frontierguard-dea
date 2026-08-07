@@ -2,9 +2,10 @@
 
 ## Creator and release author
 
-- **Vamsi Chinda** — [@chindavamsi](https://github.com/chindavamsi)
+- **Vamsi Chinda** — Independent Researcher, India —
+  [@chindavamsi](https://github.com/chindavamsi)
 
-Vamsi Chinda created FrontierGuard DEA and is its lead maintainer. The
+Vamsi Chinda is the sole author and accountable maintainer. The
 human-contributor roles recorded for release `0.1.0a1` are described in
 [CONTRIBUTOR_ROLES.md](CONTRIBUTOR_ROLES.md).
 
@@ -23,5 +24,5 @@ Generative AI tools have assisted parts of the project's development, but they
 are not authors or contributors. The scope of that assistance and the human
 accountability policy are documented in [AI_USAGE.md](AI_USAGE.md).
 
-For citation metadata, use [CITATION.cff](CITATION.cff). ORCID, affiliation,
-email, and DOI fields will be added only after they have been verified.
+For citation metadata, use [CITATION.cff](CITATION.cff). ORCID, email, and DOI
+fields will be added only after they have been verified.

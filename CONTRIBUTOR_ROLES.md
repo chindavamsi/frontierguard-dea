@@ -2,10 +2,12 @@
 
 This file records accountable human contributions using the CRediT
 (Contributor Roles Taxonomy). It describes release `0.1.0a1`, dated
-2026-07-27. Role assignments should be updated as the contributor community
+2026-08-07. Role assignments should be updated as the contributor community
 grows.
 
 ## Vamsi Chinda
+
+Vamsi Chinda is the sole author and accountable maintainer for this release.
 
 - **Conceptualization — lead:** Originated the FrontierGuard DEA project and
   its goal of auditable, reproducible data envelopment analysis.

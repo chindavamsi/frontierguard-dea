@@ -2,6 +2,9 @@
 
 ## Disclosure
 
+AI tools assisted with code and documentation; all outputs were reviewed and
+validated by the author.
+
 Generative AI has assisted the development of FrontierGuard DEA. OpenAI Codex
 has been used for research and project planning, repository scaffolding, and
 drafting or reviewing source code, tests, documentation, and release metadata.

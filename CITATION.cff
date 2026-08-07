@@ -5,11 +5,12 @@ type: software
 authors:
   - family-names: Chinda
     given-names: Vamsi
+    affiliation: "Independent Researcher, India"
 repository-code: "https://github.com/chindavamsi/frontierguard-dea"
 url: "https://github.com/chindavamsi/frontierguard-dea"
 license: MIT
 version: 0.1.0a1
-date-released: "2026-07-27"
+date-released: "2026-08-07"
 keywords:
   - data envelopment analysis
   - DEA

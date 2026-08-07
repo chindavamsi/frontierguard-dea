@@ -8,7 +8,7 @@
   "issueTracker": "https://github.com/chindavamsi/frontierguard-dea/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.1.0a1",
-  "datePublished": "2026-07-27",
+  "datePublished": "2026-08-07",
   "developmentStatus": "alpha",
   "programmingLanguage": "Python",
   "runtimePlatform": "Python >=3.10",
@@ -30,14 +30,22 @@
     "id": "https://github.com/chindavamsi",
     "givenName": "Vamsi",
     "familyName": "Chinda",
-    "name": "Vamsi Chinda"
+    "name": "Vamsi Chinda",
+    "affiliation": {
+      "type": "Organization",
+      "name": "Independent Researcher, India"
+    }
   },
   "maintainer": {
     "type": "Person",
     "id": "https://github.com/chindavamsi",
     "givenName": "Vamsi",
     "familyName": "Chinda",
-    "name": "Vamsi Chinda"
+    "name": "Vamsi Chinda",
+    "affiliation": {
+      "type": "Organization",
+      "name": "Independent Researcher, India"
+    }
   },
   "releaseNotes": "https://github.com/chindavamsi/frontierguard-dea/blob/main/CHANGELOG.md"
 }

@@ -1,7 +1,7 @@
 ---
 title: "FrontierGuard DEA: Toward Auditable and Reproducible Efficiency, Productivity, and Network Analysis"
 author: "Vamsi Chinda"
-date: "2026-07-27"
+date: "2026-08-07"
 report-version: "0.1"
 software-version: "0.1.0a1"
 status: "Non-peer-reviewed alpha-preview technical report"
@@ -13,9 +13,10 @@ bibliography: "references.bib"
 ## Toward auditable and reproducible efficiency, productivity, and network analysis
 
 **Vamsi Chinda**
+**Affiliation:** Independent Researcher, India
 **Technical report version:** 0.1
 **Software version described:** FrontierGuard DEA 0.1.0a1
-**Date:** 27 July 2026
+**Date:** 7 August 2026
 **Status:** Non-peer-reviewed alpha-preview technical report
 
 > **Status statement.** This document is a technical report, not a
@@ -1045,6 +1046,8 @@ and accountable maintainer); Validation (lead and accountable maintainer);
 Writing -- original draft (lead); Writing -- review and editing (lead); Project
 administration (lead).
 
+Vamsi Chinda is the sole author and accountable maintainer.
+
 The role statement records accountable human responsibility and should be
 updated when additional people make substantive contributions. Authorship of
 future papers must follow the policy of the selected venue and should not be
@@ -1052,19 +1055,16 @@ assigned for honorary, promotional, or purely administrative participation.
 
 ### 12.2 Funding
 
-Author confirmation is pending. No funding declaration has been supplied in
-the repository, which must not be interpreted as a declaration that no funding
-or in-kind support exists. The author must replace this paragraph with a
-complete, venue-appropriate statement before archival release.
+This work received no external funding.
 
 ### 12.3 Competing interests
 
-Author confirmation is pending. No competing-interest declaration has been
-supplied in the repository, which must not be interpreted as a declaration
-that no relevant interests exist. The author must replace this paragraph with
-a complete, venue-appropriate statement before archival release.
+The author declares no competing interests.
 
 ## 13. Generative-AI use disclosure
+
+AI tools assisted with code and documentation; all outputs were reviewed and
+validated by the author.
 
 Generative AI materially assisted the FrontierGuard project and this report.
 OpenAI Codex was used during project work, including on 26 July 2026, for
