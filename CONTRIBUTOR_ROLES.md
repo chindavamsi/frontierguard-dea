@@ -14,14 +14,12 @@ Vamsi Chinda is the sole author and accountable maintainer for this release.
 - **Methodology — lead:** Directs the selection, interpretation, and
   documentation of DEA methods and conventions.
 - **Software — lead and accountable maintainer:** Directs implementation,
-  reviews accepted changes, and is responsible for release decisions. This
-  work has received generative AI assistance as documented in
-  [AI_USAGE.md](AI_USAGE.md).
+  reviews accepted changes, and is responsible for release decisions.
 - **Validation — lead and accountable maintainer:** Defines the validation
   requirements and is responsible for evaluating numerical and methodological
   evidence before publication claims are made.
 - **Writing – original draft — lead:** Directs and accepts the original
-  project and research documentation, including AI-assisted drafts.
+  project and research documentation.
 - **Writing – review & editing — lead:** Reviews and approves the project's
   public technical and scholarly descriptions.
 - **Project administration — lead:** Maintains the project scope, release
@@ -30,9 +28,7 @@ Vamsi Chinda is the sole author and accountable maintainer for this release.
 ## Attribution policy
 
 CRediT roles describe human contributions; they do not determine author order
-or replace a publication's authorship policy. Generative AI systems are not
-listed as authors or contributors. Their use is disclosed separately in
-[AI_USAGE.md](AI_USAGE.md).
+or replace a publication's authorship policy.
 
 Future contributors will be credited, with their consent, according to their
 substantive work. The Git history remains the authoritative record of changes;

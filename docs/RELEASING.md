@@ -27,8 +27,8 @@ PyPI API token in GitHub.
 1. Confirm every method marked supported in `docs/FEATURE_MATRIX.md` satisfies
    `docs/VALIDATION.md`.
 2. Obtain the release author's explicit approval of the authorship, funding,
-   competing-interest, affiliation, and AI-use statements. Never infer missing
-   declarations from repository data.
+   competing-interest, affiliation, and any venue-required development-tool
+   disclosures. Never infer missing declarations from repository data.
 3. Update the version in both `pyproject.toml` and
    `src/frontierguard/_version.py`.
 4. Move user-facing entries from `Unreleased` to a versioned section in
@@ -53,7 +53,7 @@ PyPI API token in GitHub.
      --results-dir "$benchmark_results"
    uv run pytest --cov=frontierguard --cov-report=term-missing
    uv build --no-sources --clear
-   uvx --from twine==6.2.0 twine check --strict dist/*
+   uvx --from twine==7.0.0 twine check --strict dist/*
    ```
 
 7. Open and merge a release-preparation pull request. Do not publish from an
