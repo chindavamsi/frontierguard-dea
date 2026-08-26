@@ -53,7 +53,7 @@ PyPI API token in GitHub.
      --results-dir "$benchmark_results"
    uv run pytest --cov=frontierguard --cov-report=term-missing
    uv build --no-sources --clear
-   uvx --from twine==6.2.0 twine check --strict dist/*
+   uvx --from twine==7.0.0 twine check --strict dist/*
    ```
 
 7. Open and merge a release-preparation pull request. Do not publish from an
