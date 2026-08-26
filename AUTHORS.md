@@ -20,9 +20,5 @@ repository changes. This file and [CONTRIBUTOR_ROLES.md](CONTRIBUTOR_ROLES.md)
 describe the accountable human contributions. Ordering in this file does not
 imply ownership, rank, or endorsement.
 
-Generative AI tools have assisted parts of the project's development, but they
-are not authors or contributors. The scope of that assistance and the human
-accountability policy are documented in [AI_USAGE.md](AI_USAGE.md).
-
 For citation metadata, use [CITATION.cff](CITATION.cff). ORCID, email, and DOI
 fields will be added only after they have been verified.

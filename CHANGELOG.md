@@ -37,8 +37,7 @@ No user-facing changes yet.
 - Mathematical contracts, ecosystem matrix, validation policy, and roadmap.
 - Community governance, security, contribution, citation, and release
   automation.
-- Versioned scholarly metadata, contributor roles, and a transparent AI-use
-  record.
+- Versioned scholarly metadata and contributor-role records.
 - FrontierGuard DEA White Paper v0.1 as a non-peer-reviewed technical report.
 - An executable conformance-benchmark protocol with machine-readable cases,
   result contracts, and adapter specifications for independent implementations.

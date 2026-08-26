@@ -138,8 +138,7 @@ history and compatibility-impacting changes are recorded in
 
 The publication programme includes a versioned
 [technical white paper](paper/whitepaper/README.md)
-([PDF](output/pdf/frontierguard-dea-white-paper-v0.1.pdf)), an explicit
-[AI-use record](AI_USAGE.md), and an executable
+([PDF](output/pdf/frontierguard-dea-white-paper-v0.1.pdf)) and an executable
 [cross-language conformance benchmark](benchmarks/README.md). These materials
 describe current evidence and limitations; they do not imply peer review or
 complete cross-language validation.

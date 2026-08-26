@@ -717,8 +717,8 @@ An audit is not:
   test, and documentation; or
 - peer review.
 
-This boundary is essential. AI-assisted source code and AI-assisted tests, in
-particular, cannot be treated as independent validation of one another.
+This boundary is essential. Source code and tests produced through the same
+assistance process cannot be treated as independent validation of one another.
 
 ### 6.3 Evidence bundles
 
@@ -955,7 +955,7 @@ For version 0.1.0a1 and its successor releases:
 - archive each cited release and record its version DOI and concept DOI;
 - preserve the source in a long-term software archive;
 - publish the API and mathematical conventions;
-- keep the AI-use disclosure and human contribution roles current; and
+- keep development disclosures and human contribution roles current; and
 - make release checks and known failures visible.
 
 Software should be cited as a versioned research output rather than only as a
@@ -1061,46 +1061,19 @@ This work received no external funding.
 
 The author declares no competing interests.
 
-## 13. Generative-AI use disclosure
+## 13. Development assistance and accountability
 
-AI tools assisted with code and documentation; all outputs were reviewed and
-validated by the author.
+Generative AI tools supported project planning and the drafting or review of
+software, tests, documentation, metadata, and this technical report.
+Vamsi Chinda determined the research objectives, methods, architecture,
+accepted wording, and publication claims; reviewed and validated all accepted
+outputs; and remains solely accountable.
 
-Generative AI materially assisted the FrontierGuard project and this report.
-OpenAI Codex was used during project work, including on 26 July 2026, for
-research and project planning, repository scaffolding, and drafting or
-reviewing source code, tests, documentation, release metadata, reference
-metadata, and this white-paper manuscript.
-
-The exact serving model and version were not preserved in repository metadata
-for all development sessions. This report therefore does not assert a model
-identifier that cannot be verified. The product, date, task scope, affected
-artifacts, and validation performed should be logged for future sessions when
-that information is exposed.
-
-For this report, AI assistance included:
-
-- organizing the manuscript and proposing explanatory language;
-- summarizing implemented contracts from source and project documentation;
-- drafting equations, tables, limitations, and the reproducible example;
-- discovering candidate scholarly references;
-- checking DOI metadata against Crossref or primary publisher records; and
-- checking internal citation keys and Markdown structure.
-
-Human accountability is not delegated to the AI system. Vamsi Chinda is the
-author, creator, and accountable maintainer. The human author is responsible
-for deciding the scientific objectives, model conventions, architecture,
-release scope, accepted wording, and publication claims; reviewing and
-accepting or rejecting AI-assisted changes; checking formulations against
-primary literature; running and interpreting the quality checks; and verifying
-numerical results through independent implementations where available.
-
-AI systems are not authors or contributors and cannot provide consent, take
-responsibility, disclose conflicts, or independently validate their own
-output. AI-assisted code and AI-assisted tests are treated as untrusted until
-human review and independent evidence are complete. The living project
-disclosure is maintained in
-[`AI_USAGE.md`](../../AI_USAGE.md).
+These tools are not authors or contributors, do not make release decisions,
+and were not treated as independent scientific validation. The project-level
+statement is maintained in
+[`DEVELOPMENT_DISCLOSURE.md`](../../DEVELOPMENT_DISCLOSURE.md). Any future
+manuscript will follow the disclosure requirements of its selected venue.
 
 ## 14. Conclusion
 
